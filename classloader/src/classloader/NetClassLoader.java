@@ -7,11 +7,11 @@ import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class NetworkClassLoader extends ClassLoader {
+public class NetClassLoader extends ClassLoader {
 
     private static String WEBCLASSPATH = "";
 
-    public NetworkClassLoader(String webClassPath) {
+    public NetClassLoader(String webClassPath) {
         WEBCLASSPATH = webClassPath;
     }
 
@@ -52,7 +52,7 @@ public class NetworkClassLoader extends ClassLoader {
     }
 
     public static void main(String[] args) {
-        ClassLoader cl = new NetworkClassLoader("http://97.64.124.191/images/Hello.class");
+        ClassLoader cl = new NetworkClassLoader("http://97.64.124.191:8080/");
         try {
             Class c = cl.loadClass("Hello");
             if (c == null) {
